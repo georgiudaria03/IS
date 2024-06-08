@@ -1,0 +1,81 @@
+  Ex1. 
+(a) {{x == y}}z := x − y{{z == 0}}
+Preconditia: x este egal cu y
+Comanda: z:=x-y
+Postconditia:trebuie sa demonstram ca z==0
+Avand preconditia x==y executam:
+z=x-y
+z=y-y=0,de aici rezulta ca postconditia e adevarata
+Prin urmare :
+Triple holds:{{x == y}}z := x − y{{z == 0}}
+
+
+(b) {{true}}x:=100{{x==100}}
+Preconditia: true,nu avem o conditie specificata,mereu adevarata
+Comanda: z:=100
+Postconditia:trebuie sa demonstram ca x==100
+Avand preconditia true executam:
+x=100, s-a asignat valoarea
+x=100,de aici rezulta ca postconditia e adevarata
+Prin urmare :
+Triple holds: {{true}}x:=100{{x==100}}
+
+
+(c) 
+{{0≤x<100}}x:=x+1{{0≤x≤100}}
+
+Preconditia: 0<=x<100,echivalent cu 0<=x<=99
+Comanda: x:=x+1
+Postconditia:trebuie sa demonstram ca 0≤x≤100
+Avand preconditia 0<=x<=99 executam:
+0<=x<=99 x=x+1 =>  0<=x<100
+x=100,de aici rezulta ca postconditia e adevarata
+Prin urmare :
+Triple holds: {{0≤x<100}}x:=x+1{{0≤x≤100}}
+
+
+Ex2.
+
+(a) {{true}}x := 2 ∗ y{{y <= x}}  
+Preconditia: true,nu avem o conditie specificata,mereu adevarata
+Comanda: x:= 2*y
+Postconditia:trebuie sa demonstram ca y<=x
+Avand preconditia true executam:
+
+Luam valoarea y=-1
+              x=2*(-1)
+              x=-2
+
+-1<=-2 FALS => triple does not hold
+
+(b) {{0 <= x}}x := x − 1{{0 <= x}}
+Preconditia: 0 <= x
+Comanda: x := x − 1
+Postconditia:trebuie sa demonstram ca 0 <= x
+Avand preconditia true executam:
+
+Luam valoarea  x=0
+               x=x-1
+               x=0-1=-1
+
+0<=x FALS => triple does not hold
+
+
+
+Ex3
+(a) {{0 <= x < 100}}x := 2 ∗ x{{?}}
+
+Preconditia: {{ 0<= x < 199}}
+
+(b) {{0 <= x < N}}x := x + 1{{?}}
+   
+Preconditia: {{0 <=x <= N}
+
+Ex4
+(a) {{?}}x := 400{{x == 400}}
+      Postconditia: true
+(b) {{?}}x := 65{{y <= x}}
+Postconditia: y=64
+
+
+
